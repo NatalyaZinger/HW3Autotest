@@ -31,11 +31,11 @@ public class CardTest {
     @Test
     void cardTest() {
         driver.get("http://localhost:9999");
-        driver.findElement(By.cssSelector("[data-test-id = name] input")).sendKeys("Елена Смирнова");
-        driver.findElement(By.cssSelector("[data-test-id = phone] input")).sendKeys("+79048042065");
-        driver.findElement(By.cssSelector("[data-test-id = agreement]")).click();
-        driver.findElement(By.className("button")).click();
-        String text = driver.findElement(By.cssSelector("[data-test-id=order-success]")).getText();
+        driver.findElement(By.cssSelector("[data-test-id = 'name'] input")).sendKeys("Елена Смирнова");
+        driver.findElement(By.cssSelector("[data-test-id = 'phone'] input")).sendKeys("+79048042065");
+        driver.findElement(By.cssSelector("[data-test-id = 'agreement']")).click();
+        driver.findElement(By.cssSelector("button")).click();
+        String text = driver.findElement(By.cssSelector("[data-test-id= 'order-success']")).getText();
         assertEquals("Ваша заявка успешно отправлена! Наш менеджер свяжется с вами в ближайшее время.", text.trim());
 
     }
